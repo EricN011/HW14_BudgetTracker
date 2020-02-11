@@ -11,7 +11,7 @@ request.onupgradeneeded = function (event) {
 };
 
 request.onsuccess = function (event) {
-  db = target.result;
+  db = event.target.result;
 
   if (navigator.onLine) {
     checkDatabase();
@@ -20,7 +20,7 @@ request.onsuccess = function (event) {
 
 request.onerror = function (event) {
   // log error here
-  console.log("Woops! " + event.target.errorCode);
+  console.log("Whoops! " + event.target.errorCode);
 
 };
 
