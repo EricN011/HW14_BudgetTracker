@@ -7,7 +7,7 @@ const PORT = 3000;
 
 const app = express();
 
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoheadlines"
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/budget"
 
 app.use(logger("dev"));
 
