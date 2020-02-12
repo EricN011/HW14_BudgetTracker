@@ -7,6 +7,8 @@ const PORT = 3000;
 
 const app = express();
 
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoheadlines"
+
 app.use(logger("dev"));
 
 app.use(compression());
@@ -15,10 +17,11 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://EricN011:Liftr88!@ds213079.mlab.com:13079/heroku_sj9gks9w", {
-  useNewUrlParser: true,
-  useFindAndModify: false
-});
+mongoose.connect(MONGODB_URI
+  //   {useNewUrlParser: true,
+  //   useFindAndModify: false
+  // }
+);
 
 app.use(require("./routes/apiRoutes"));
 
